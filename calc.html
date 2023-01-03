@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .ilb {
+        display: inline-flex;
+        padding-left: 20%;
+        font-size: 20px;
+      }
+      .cen {
+        text-align: center;
+        font-size: 20px;
+      }
+      .est {
+        font-size: 20px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Cost Estimation Calculator</h2>
+      <p>
+        Please fill out the form below to get an estimate of house construction
+        costs.Please Contact our technical expert for more accurate pricing
+      </p>
+      <p>All these Rates are in Andhra Pradesh.</p>
+      <!-- <table>
+        <tr>
+          <td> -->
+
+      <p class="ilb">
+        <label for="plot_area">Plot area to Built</label>
+        <input
+          type="number"
+          id="plot_area"
+          placeholder="Area of Plot in Sq.ft."
+        />
+      </p>
+
+      <!-- </td>
+          <td> -->
+      <p class="ilb">
+        <label for="no_Of_floor">No. Of Floors to be Constructed</label>
+        <input type="number" id="no_Of_floor" placeholder="No. Of Floors" />
+      </p>
+      <!--  </td>
+        </tr>
+        <tr>
+          <td rowspan="2"> -->
+      <p class="cen">
+        <label for="package">Package</label>
+        <select id="package_value">
+          <option value="1710">Budget Package-₹1710/sq.ft.</option>
+          <option value="1870">Classic Package-₹1870/sq.ft.</option>
+          <option value="2030">Premium Package-₹2030/sq.ft.</option>
+        </select>
+      </p>
+      <!-- </td>
+        </tr>
+      </table> -->
+      <br />
+      <p class="cen">
+        <button onclick="multiply()"><p class="est">Estimate Cost</p></button>
+      </p>
+      <div id="total"></div>
+    </div>
+
+    <script type="text/javascript">
+      function multiply() {
+        var n1 = parseFloat(document.getElementById("plot_area").value);
+        var n2 = parseFloat(document.getElementById("no_Of_floor").value);
+        var n3 = parseFloat(document.getElementById("package_value").value);
+        var total = n1 * n2 * n3;
+        document.getElementById("total").innerHTML =
+          "Total Cost For Your Construction is: " + total;
+      }
+    </script>
+  </body>
+</html>
